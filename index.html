@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>bwat keretaa!</title>
+  <!-- <style>
+    body {
+      background-color: #fce4ec;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .love-button {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.6s;
+    }
+
+    .letter-popup {
+      margin-top: 20px;
+      width: 90%;
+      max-width: 650px;
+      background: #fff;
+      border: 2px solid #f7acc4;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transform: translateY(50px);
+      opacity: 0;
+      transition: all 0.6s ease;
+      position: relative;
+      text-align: left;
+    }
+
+    .letter-popup::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 20px solid #fff;
+    }
+
+    .letter-popup.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .message {
+      font-size: 40px;
+      color: #e91e63;
+      max-height: 300px;
+      overflow-y: auto;
+      white-space: pre-line;
+      padding-right: 10px;
+    }
+
+    .photo-text {
+      font-size: 50px;
+      font-weight: bold;
+      color: #e91e63;
+      margin-bottom: 10px;
+      transition: opacity 0.4s;
+    }
+
+    .next-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #e91e63;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .next-button:hover {
+      background-color: #c2185b;
+    }
+    
+    .hidden-buttons {
+      display: none;
+      margin-top: 15px;
+      justify-content: space-around;
+    }
+
+    #gif-indikator {
+      width: 80px;
+      display: none;
+      margin-bottom: 10px;
+    }
+
+    /* Media Query untuk perangkat mobile */
+@media (max-width: 600px) {
+  body {
+    justify-content: center; /* Tengah secara vertikal */
+    padding: 10px;
+  }
+
+  .letter-popup {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .love-button {
+    max-width: 120px;
+  }
+
+  .photo-text {
+    font-size: 18px;
+  }
+
+  .message {
+    font-size: 40px; /* Ukuran diperbesar dari 14px ke 16px */
+  }
+
+  .next-button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+
+    /* Styling untuk GIF background */
+    .gif-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('gif.gif') no-repeat center center fixed;
+      background-size: cover;
+      display: none; /* Mulai dengan tidak terlihat */
+      z-index: -1; /* Agar berada di belakang konten lainnya */
+    }
+  </style> -->
+</head>
+<body>
+
+  <div id="photo-text" class="photo-text">
+    click here!
+  </div>
+
+  <img src="p2.png" 
+       alt="Foto" 
+       class="love-button" 
+       id="photo" 
+       onclick="gantiFotoSekali()" />
+
+  <div class="letter-popup" id="letter">
+    <div class="message" id="message"></div>
+  
+    <!-- Tombol akan dimunculkan setelah teks selesai -->
+    <div class="hidden-buttons" id="button-container">
+      <a href="kenangan2.html">
+        <img src="p0.png" alt="Next 1" style="width: 140px; cursor: pointer; border-radius: 10px;">
+      </a>
+      <a href="kenangan2.html">
+        <img src="p.png" alt="Next 2" style="width: 170px; cursor: pointer; border-radius: 10px;">
+      </a>
+    </div>
+  </div>
+
+  <!-- Audio untuk lagu, tanpa kontrol -->
+  <audio id="audio" autoplay loop>
+    <source src="see you again.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- GIF background yang akan muncul setelah klik -->
+  <div id="gif-background" class="gif-background"></div>
+
+  <script>
+    let sudahDiganti = false;
+  
+    const fullText = `hehh keretaa!
+  aku cuman mau ngomong, tenkyuuuuuuuuuuuuuuuuuuuuuu banget dah jadi dekel ter the best ku alias temenku jugaa🤍
+  jujurly aku bersyukur ketemu kamu di badminton walaupun awalnya kamu malu-malu kentut kayak gitu sihh hhe:v
+  maaf dan makasihh banget udah mau di repotin mulu ama kakelmu ini. 
+  makasihh juga udah jadi temen ceritakuu.
+  aku harap kita ga bakal lost kontak ya sama nanti kalo kita udah lama ga ketemu terus nanti ketemu
+  lagi jangan acuh yaa jangan sombongg😐, Tuhan ndak suka eheq. 
+  kamu inii jangan jadi budak nakall, nurut atuhh🗿
+  jangan aneh-aneh juga kamu euyy ga baik atuhh, sama temenn jangan brantem muluu okey?
+  kalo ada apa-apa, kamu bisa cerita ke akuu, u can trust me sokey?
+  tapi aku ga bakal maksa kok, senyaman kamu ajaa. 
+  kamu jaga diri baik-baik ya kereta..
+  huhu aku ngetik ini sambil mewek huaa, kamu jangan ikutan nangis yee😞
+  maaf ya untuk skarang aku ga bisa bantu sama kasi kamu apa-apa..but i'll try my best.
+  tenkyuuu banyak-banyakk💐💐`;
+  
+    function gantiFotoSekali() {
+      const photo = document.getElementById('photo');
+      const letter = document.getElementById('letter');
+      const photoText = document.getElementById('photo-text');
+      const audio = document.getElementById('audio');
+      const gifBackground = document.getElementById('gif-background');
+  
+      if (!sudahDiganti) {
+        photo.src = 'p3.png';
+        sudahDiganti = true;
+      }
+  
+      photoText.style.opacity = '0';
+      letter.classList.add('show');
+  
+      // Menampilkan GIF background setelah klik
+      gifBackground.style.display = 'block';
+  
+      // Ketik teks satu per satu
+      ketikTeks(fullText, document.getElementById('message'), () => {
+        // Setelah selesai ngetik, munculin tombol
+        document.getElementById('button-container').style.display = 'flex';
+      });
+  
+      // Menjalankan audio setelah gambar diklik
+      audio.play();
+    }
+  
+    function ketikTeks(teks, elemen, selesaiCallback) {
+      let i = 0;
+      elemen.innerHTML = '';
+      const interval = setInterval(() => {
+        if (i < teks.length) {
+          const char = teks[i];
+          if (char === '\n') {
+            elemen.innerHTML += '<br>';
+          } else {
+            elemen.innerHTML += char;
+          }
+          i++;
+          elemen.scrollTop = elemen.scrollHeight;
+        } else {
+          clearInterval(interval);
+          if (selesaiCallback) selesaiCallback();
+        }
+      }, 35); // atur kecepatan ketik
+    }
+  </script>
+  
+</body>
+</html>

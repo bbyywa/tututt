@@ -1,0 +1,141 @@
+
+    body {
+      background-color: #fce4ec;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .love-button {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.6s;
+    }
+
+    .letter-popup {
+      margin-top: 20px;
+      width: 90%;
+      max-width: 650px;
+      background: #fff;
+      border: 2px solid #f7acc4;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transform: translateY(50px);
+      opacity: 0;
+      transition: all 0.6s ease;
+      position: relative;
+      text-align: left;
+    }
+
+    .letter-popup::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 20px solid #fff;
+    }
+
+    .letter-popup.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .message {
+      font-size: 40px;
+      color: #e91e63;
+      max-height: 300px;
+      overflow-y: auto;
+      white-space: pre-line;
+      padding-right: 10px;
+    }
+
+    .photo-text {
+      font-size: 50px;
+      font-weight: bold;
+      color: #e91e63;
+      margin-bottom: 10px;
+      transition: opacity 0.4s;
+    }
+
+    .next-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #e91e63;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .next-button:hover {
+      background-color: #c2185b;
+    }
+    
+    .hidden-buttons {
+      display: none;
+      margin-top: 15px;
+      justify-content: space-around;
+    }
+
+    #gif-indikator {
+      width: 80px;
+      display: none;
+      margin-bottom: 10px;
+    }
+
+    /* Media Query untuk perangkat mobile */
+@media (max-width: 600px) {
+  body {
+    justify-content: center; /* Tengah secara vertikal */
+    padding: 10px;
+  }
+
+  .letter-popup {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .love-button {
+    max-width: 120px;
+  }
+
+  .photo-text {
+    font-size: 18px;
+  }
+
+  .message {
+    font-size: 40px; /* Ukuran diperbesar dari 14px ke 16px */
+  }
+
+  .next-button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+
+    /* Styling untuk GIF background */
+    .gif-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('gif.gif') no-repeat center center fixed;
+      background-size: cover;
+      display: none; /* Mulai dengan tidak terlihat */
+      z-index: -1; /* Agar berada di belakang konten lainnya */
+    }
+ 
