@@ -51,7 +51,7 @@
     }
 
     .message {
-      font-size: 14px;
+      font-size: 40px;
       color: #e91e63;
       max-height: 300px;
       overflow-y: auto;
